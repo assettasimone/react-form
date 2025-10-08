@@ -31,6 +31,13 @@ function App() {
 
   }
 
+  function handleClick(id) {
+
+    console.log('il filma da eliminare ha id:' + id);
+
+
+  }
+
 
   return (
     <>
@@ -47,8 +54,9 @@ function App() {
         <h2 className='my-4'>Lista Articoli</h2>
         <ul className="list-group">
           {posts.map(post => (
-            <li className="list-group-item">
-              {post.title}
+            <li className="list-group-item d-flex justify-content-between align-items-center" key={post.id}>
+              <span>{post.title}</span>
+              <button className='btn btn-danger'><i className="bi bi-trash3" onClick={() => handleClick(post.id)}></i></button>
             </li>
           ))}
 
